@@ -1,8 +1,19 @@
-html{
-    font-size: 18px;
+.headerTitle {
+    text-align: center;
+    font-size: 50px;
 }
 
-.chords{
-    color: blue;
+.mainContent {
+    font-size: 40px;
+    line-height: 80px;
+    padding: 20px;
+}
+
+.chord{
+    color: orangered;
     font-weight: bold;
+    display: inline;
+    position: relative;
+    top: -30px;
+    left: 50px;
 }
