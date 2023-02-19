@@ -10,10 +10,11 @@
 }
 
 .chord{
+    font-size: 35px;
     color: orangered;
     font-weight: bold;
     display: inline-flex;
     position: relative;
-    top: -20px;
-    width: 5px;
+    top: -35px;
+    width: 8px;
 }
