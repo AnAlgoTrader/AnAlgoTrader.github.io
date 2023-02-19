@@ -12,8 +12,8 @@
 .chord{
     color: orangered;
     font-weight: bold;
-    display: inline;
+    display: inline-flex;
     position: relative;
-    top: -30px;
-    left: 50px;
+    top: -20px;
+    width: 5px;
 }
