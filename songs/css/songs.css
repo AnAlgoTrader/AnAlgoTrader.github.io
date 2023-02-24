@@ -1,11 +1,5 @@
-.headerTitle {
-    text-align: center;
-    font-size: 50px;
-}
-
-.mainContent {
+html, body{
     font-size: 40px;
-    padding: 20px;
 }
 
 .chord {
