@@ -9,5 +9,6 @@ function getRequests() {
 };
 
 var queryString = getRequests();
+console.log(queryString["i"]);
 console.log(queryString["u"]);
 console.log(queryString["p"]);
