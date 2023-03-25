@@ -22,7 +22,7 @@ const u = queryString["u"];
 const p = queryString["p"];
 
 const connection = new signalR.HubConnectionBuilder()
-    .withUrl(`https://${ip}:5556/mainHub`, { accessTokenFactory: async() => await getToken() })
+    .withUrl(`http://${ip}:5556/mainHub`, { accessTokenFactory: async() => await getToken() })
     .withAutomaticReconnect()
     .configureLogging(signalR.LogLevel.Information)
     .build();
@@ -33,7 +33,7 @@ connection.on("DataChannel", (sender, type, message) => {
 });
 
 async function getToken() {
-    const rawResponse = await fetch(`https://${ip}:5556/api/login`, {
+    const rawResponse = await fetch(`http://${ip}:5556/api/login`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
