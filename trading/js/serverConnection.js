@@ -1,11 +1,3 @@
-
-
-
-
-//-------------------------------------------------------------------------------------------------
-// Connection to server
-//-------------------------------------------------------------------------------------------------
-
 function getRequests() {
     var s1 = location.search.substring(1, location.search.length).split('&'),
         r = {}, s2, i;
@@ -26,11 +18,6 @@ const connection = new signalR.HubConnectionBuilder()
     .withAutomaticReconnect()
     .configureLogging(signalR.LogLevel.Information)
     .build();
-
-connection.on("DataChannel", (sender, type, message) => {
-    if (sender == "IB.Trader") {
-    }
-});
 
 async function getToken() {
     const rawResponse = await fetch(`http://${ip}:5556/api/login`, {
