@@ -50,10 +50,9 @@ connection.on("DataChannel", (sender, type, message) => {
             var data = JSON.parse(message);
             displayBar(data);
         }
-        else if (type == "macdUpdate") {
+        else if (type == "stochasticUpdate") {
             var data = JSON.parse(message);
-            console.log(data);
-            displayMacd(data);
+            displayStochastic(data);
         }
     }
 });

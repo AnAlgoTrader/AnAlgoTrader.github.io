@@ -1,4 +1,4 @@
-var macdChart = LightweightCharts.createChart(document.getElementById('macdContainer'),
+var stochasticChart = LightweightCharts.createChart(document.getElementById('stochasticContainer'),
     {
         layout: {
             backgroundColor: black,
@@ -24,14 +24,14 @@ var macdChart = LightweightCharts.createChart(document.getElementById('macdConta
         }
     });
 
-const bigEmaSeries = macdChart.addLineSeries({
-    color: yellow,
+const stochasticSeries = stochasticChart.addLineSeries({
+    color: red,
     lineWidth: 1,
 });
 
-function displayMacd(data) {    
-    bigEmaSeries.update({
+function displayStochastic(data) {    
+    stochasticSeries.update({
         time: data.Time,
-        value: data.BigEma
+        value: data.Value
     });
 }
