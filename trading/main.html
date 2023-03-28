@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Main chart</title>
+    <title>Trading</title>
     <link type="text/css" rel="stylesheet" href="./css/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@7.0.4/dist/browser/signalr.min.js"></script>
     <script type="application/json" src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@7.0.4/dist/browser/signalr.min.js.map"></script>
@@ -11,9 +11,10 @@
 </head>
 
 <body>
-    <div id="candlesContainer" class="candlesContainerClass"></div>
+    <div id="candlesContainer" class="candlesContainer"></div>
+    <div id="macdContainer" class="macdContainer"></div>
     <script type="text/javascript" src="./js/serverConnection.js"></script>
-    <script type="text/javascript" src="./js/charts.js"></script>
+    <script type="text/javascript" src="./js/candlesChart.js"></script>
     <script type="text/javascript" src="./js/handlers.js"></script>
 </body>
 

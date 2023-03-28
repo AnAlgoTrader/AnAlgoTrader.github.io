@@ -43,4 +43,14 @@ async function start() {
 connection.onclose(async () => {
     await start();
 });
+
+connection.on("DataChannel", (sender, type, message) => {
+    if (sender == "IB.Trader") {
+        if (type == "priceUpdate") {
+            var data = JSON.parse(message);
+            displayBar(data);
+        } 
+    }
+});
+
 start();
