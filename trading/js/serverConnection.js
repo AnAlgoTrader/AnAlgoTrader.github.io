@@ -49,7 +49,12 @@ connection.on("DataChannel", (sender, type, message) => {
         if (type == "priceUpdate") {
             var data = JSON.parse(message);
             displayBar(data);
-        } 
+        }
+        else if (type == "macdUpdate") {
+            var data = JSON.parse(message);
+            console.log(data);
+            displayMacd(data);
+        }
     }
 });
 

@@ -1,4 +1,4 @@
-var candlesChart = LightweightCharts.createChart(document.getElementById('candlesContainer'),
+var macdChart = LightweightCharts.createChart(document.getElementById('macdContainer'),
     {
         layout: {
             backgroundColor: black,
@@ -24,21 +24,14 @@ var candlesChart = LightweightCharts.createChart(document.getElementById('candle
         }
     });
 
-const candleStickSeries = candlesChart.addCandlestickSeries({
-    upColor: green,
-    downColor: red,
-    wickUpColor: green,
-    wickDownColor: red,
-    borderVisible: false,
-    priceLineVisible: false,
+const bigEmaSeries = macdChart.addLineSeries({
+    color: yellow,
+    lineWidth: 1,
 });
 
-function displayBar(data) {    
-    candleStickSeries.update({
-        time: data.time,
-        open: data.open,
-        high: data.high,
-        low: data.low,
-        close: data.close
+function displayMacd(data) {    
+    bigEmaSeries.update({
+        time: data.Time,
+        value: data.BigEma
     });
 }
