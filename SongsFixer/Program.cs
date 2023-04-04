@@ -10,6 +10,7 @@ namespace SongsFixer
         static void Main()
         {
             var songToFix = File.ReadAllText($"{songsDirectory}/template.html");
+            songToFix = songToFix.Replace("N.C.", string.Empty);
             var doc = new HtmlDocument();
             doc.LoadHtml(songToFix);
             RemoveClassAttributes(doc);
