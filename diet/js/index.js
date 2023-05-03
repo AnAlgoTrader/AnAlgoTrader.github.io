@@ -43,6 +43,8 @@ anychart.onDocumentReady(function () {
     // specify where to display the chart
     chart.container("weightChart");
 
+    chart.background().fill("#302f2f 0.2");
+
     // draw the resulting chart
     chart.draw();
 
