@@ -354,7 +354,6 @@ MigrationBackup/
 personalSettings.json
 dbSettings.json
 
-*.csv
 timeframes/
 .angular/
 *dist/
