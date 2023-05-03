@@ -1,51 +1,49 @@
-d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv", function (err, rows) {
+anychart.onDocumentReady(function () {
+    // add data
+    var data = [
+        ["19/05/2023", 111],
+        ["20/05/2023", 112],
+        ["21/05/2023", 109],
+        ["22/05/2023", 111],
+        ["23/05/2023", 111]
+    ];
 
-    function unpack(rows, key) {
-        return rows.map(function (row) { return row[key]; });
-    }
+    // create a data set
+    var dataSet = anychart.data.set(data);
 
-    var trace1 = {
-        type: "scatter",
-        mode: "lines",
-        name: 'AAPL High',
-        x: unpack(rows, 'Date'),
-        y: unpack(rows, 'AAPL.High'),
-        line: { color: '#17BECF' }
-    }
+    // map the data for all series
+    var firstSeriesData = dataSet.mapAs({ x: 0, value: 1 });
 
-    var data = [trace1];
+    // create a line chart
+    var chart = anychart.line();
 
-    var layout = {
-        title: 'Time Series with Rangeslider',
-        xaxis: {
-            autorange: true,
-            range: ['2015-02-17', '2017-02-16'],
-            rangeselector: {
-                buttons: [
-                    {
-                        count: 1,
-                        label: '1m',
-                        step: 'month',
-                        stepmode: 'backward'
-                    },
-                    {
-                        count: 6,
-                        label: '6m',
-                        step: 'month',
-                        stepmode: 'backward'
-                    },
-                    { step: 'all' }
-                ]
-            },
-            rangeslider: { range: ['2015-02-17', '2017-02-16'] },
-            type: 'date'
-        },
-        yaxis: {
-            autorange: true,
-            range: [86.8700008333, 138.870004167],
-            type: 'linear'
-        }
-    };
+    // create the series and name them
+    var firstSeries = chart.line(firstSeriesData);
+    firstSeries.name("Peso");
 
-    Plotly.newPlot('weight', data, layout);
-})
+    // add a legend and customize it
+    chart.legend().enabled(true).fontSize(14).padding([10, 0, 10, 0]);
+
+    // name the axes
+    chart.yAxis().title("Peso");
+
+    // customize the series markers
+    firstSeries.hovered().markers().type("circle").size(4);
+
+    // turn on crosshairs and remove the y hair
+    chart.crosshair().enabled(true).yStroke(null).yLabel(false);
+
+    // change the tooltip position
+    chart.tooltip().positionMode("point");
+    chart.tooltip().position("right").anchor("left-center").offsetX(5).offsetY(5);
+
+    // customize the series stroke in the normal state
+    firstSeries.normal().stroke("#7b60a2", 2.5);
+
+    // specify where to display the chart
+    chart.container("weightChart");
+
+    // draw the resulting chart
+    chart.draw();
+
+});
