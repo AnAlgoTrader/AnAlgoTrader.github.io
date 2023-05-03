@@ -45,6 +45,9 @@ anychart.onDocumentReady(function () {
 
     chart.background().fill("#302f2f 0.2");
 
+    var xLabels = chart.xAxis().labels();
+    xLabels.enabled(false);
+
     // draw the resulting chart
     chart.draw();
 
