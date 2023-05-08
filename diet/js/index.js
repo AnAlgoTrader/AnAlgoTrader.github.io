@@ -1,5 +1,5 @@
 anychart.onDocumentReady(function () {
-    anychart.data.loadJsonFile("https://raw.githubusercontent.com/AnAlgoTrader/analgotrader.github.io/main/diet/data/weights.json", function (data) {
+    anychart.data.loadJsonFile("https://raw.githubusercontent.com/AnAlgoTrader/analgotrader.github.io/main/diet/data/data.json", function (data) {
 
         // create a data set
         var dataSet = anychart.data.set(data);
