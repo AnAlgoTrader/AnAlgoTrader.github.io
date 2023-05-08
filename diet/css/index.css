@@ -49,3 +49,9 @@ body {
 .weightChart{
     height: 600px;
 }
+
+.foodPlanTable{
+    padding-left: 100px;
+    padding-top: 50px;
+    color: #ebe5e5;
+}
