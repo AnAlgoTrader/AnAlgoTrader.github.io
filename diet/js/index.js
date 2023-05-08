@@ -6,6 +6,7 @@ anychart.onDocumentReady(function () {
 
         // map the data for all series
         var firstSeriesData = dataSet.mapAs({ x: 0, value: 1 });
+        var secondSeriesData = dataSet.mapAs({ x: 0, value: 2 });
 
         // create a line chart
         var chart = anychart.line();
@@ -14,14 +15,18 @@ anychart.onDocumentReady(function () {
         var firstSeries = chart.line(firstSeriesData);
         firstSeries.name("Peso");
 
+        var secondSeries = chart.line(secondSeriesData);
+        secondSeries.name('Cintura');
+
         // add a legend and customize it
         chart.legend().enabled(true).fontSize(14).padding([10, 0, 10, 0]);
 
         // name the axes
-        chart.yAxis().title("Peso");
+        chart.legend().enabled(true);
 
         // customize the series markers
         firstSeries.hovered().markers().type("circle").size(4);
+        secondSeries.hovered().markers().type("circle").size(4);
 
         // turn on crosshairs and remove the y hair
         chart.crosshair().enabled(true).yStroke(null).yLabel(false);
@@ -31,7 +36,8 @@ anychart.onDocumentReady(function () {
         chart.tooltip().position("right").anchor("left-center").offsetX(5).offsetY(5);
 
         // customize the series stroke in the normal state
-        firstSeries.normal().stroke("#7b60a2", 2.5);
+        firstSeries.normal().stroke("#ddc0a9", 2.5);
+        secondSeries.normal().stroke("#ddd543", 2.5);
 
         // specify where to display the chart
         chart.container("weightChart");
