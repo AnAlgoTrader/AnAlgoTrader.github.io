@@ -55,3 +55,11 @@ body {
     padding-top: 50px;
     color: #ebe5e5;
 }
+.foodPlanTable th{
+    background-color: gray;
+    min-width: 200px;
+}
+.foodPlanTable td{
+    padding: 20px;
+    border-bottom: solid 0.5px;
+}
