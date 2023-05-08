@@ -48,18 +48,20 @@ body {
 
 .weightChart{
     height: 600px;
+    padding-left: 20px;
 }
 
 .foodPlanTable{
-    padding-left: 100px;
+    padding-left: 50px;
     padding-top: 50px;
     color: #ebe5e5;
 }
 .foodPlanTable th{
     background-color: gray;
     min-width: 200px;
+    padding: 10px;
 }
 .foodPlanTable td{
-    padding: 20px;
+    padding: 10px;
     border-bottom: solid 0.5px;
 }

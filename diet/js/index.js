@@ -41,7 +41,6 @@ anychart.onDocumentReady(function () {
 
         // specify where to display the chart
         chart.container("weightChart");
-
         chart.background().fill("#302f2f 0.2");
 
         var xLabels = chart.xAxis().labels();
@@ -50,5 +49,4 @@ anychart.onDocumentReady(function () {
         // draw the resulting chart
         chart.draw();
     });
-
 });
