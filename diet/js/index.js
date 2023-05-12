@@ -15,7 +15,7 @@ anychart.onDocumentReady(function () {
         var firstSeries = chart.line(firstSeriesData);
         firstSeries.name("Peso");
 
-        var secondSeries = chart.line(secondSeriesData);
+        var secondSeries = chart.column(secondSeriesData);
         secondSeries.name('Cintura');
 
         // add a legend and customize it
@@ -37,7 +37,7 @@ anychart.onDocumentReady(function () {
 
         // customize the series stroke in the normal state
         firstSeries.normal().stroke("#ddc0a9", 2.5);
-        secondSeries.normal().stroke("#ddd543", 2.5);
+        secondSeries.normal().stroke("#0073e6", 2.5);
 
         // specify where to display the chart
         chart.container("weightChart");
