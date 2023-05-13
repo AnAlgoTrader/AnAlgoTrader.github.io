@@ -27,11 +27,11 @@ async function loadData() {
 async function buy() {
     const priceLine = {
         price: currentBid,
-        color: '#198754',
+        color: green,
         lineWidth: 1,
         lineStyle: 1,
         axisLabelVisible: true,
-        title: `BUY@${currentBid} Pnl:0`,
+        title: `BUY@${parseFloat(currentBid).toFixed(2)} Pnl:0`,
     };
     priceLines.push(priceLine);
     candleStickSeries.createPriceLine(priceLine);
@@ -39,12 +39,12 @@ async function buy() {
 
 async function sell() {
     const priceLine = {
-        price: currentAsk,
-        color: '#dc3545',
+        price: currentBid,
+        color: red,
         lineWidth: 1,
         lineStyle: 1,
         axisLabelVisible: true,
-        title: `SELL@${currentAsk} Pnl:0`,
+        title: `SELL@${parseFloat(currentBid).toFixed(2)} Pnl:0`,
     };
     priceLines.push(priceLine);
     candleStickSeries.createPriceLine(priceLine);
@@ -63,12 +63,24 @@ async function iterateThroughInitialData() {
 async function init() {
     ticks = await loadData();
     await iterateThroughInitialData();
-    setInterval(updateCandle, 500);
+    setInterval(updateAll, 500);
 };
 
 async function extractDukascopyDate(tick) {
     const dukascopyDate = tick["Gmt time"];
     return moment(dukascopyDate, 'DD.MM.YYYY hh:mm:ss.fff');
+}
+
+async function updatePriceLines() {
+    priceLines.forEach(priceLine => {
+        var price = priceLine.price;
+        var title = priceLine.title;
+    });
+}
+
+async function updateAll() {
+    await updateCandle();
+    await updatePriceLines();
 }
 
 async function updateCandle() {
