@@ -1,6 +1,9 @@
 var ticks = [];
 var ticksIndex = 0;
 var candleMinute = -1;
+var priceLines = [];
+var currentAsk = 0.0;
+var currentBid = 0.0;
 
 var candle = {
     time: 0,
@@ -22,11 +25,29 @@ async function loadData() {
 };
 
 async function buy() {
-    console.log("async BUY!!");
+    const priceLine = {
+        price: currentBid,
+        color: '#198754',
+        lineWidth: 1,
+        lineStyle: 1,
+        axisLabelVisible: true,
+        title: `BUY@${currentBid} Pnl:0`,
+    };
+    priceLines.push(priceLine);
+    candleStickSeries.createPriceLine(priceLine);
 }
 
 async function sell() {
-    console.log("async SELL!!");
+    const priceLine = {
+        price: currentAsk,
+        color: '#dc3545',
+        lineWidth: 1,
+        lineStyle: 1,
+        axisLabelVisible: true,
+        title: `SELL@${currentAsk} Pnl:0`,
+    };
+    priceLines.push(priceLine);
+    candleStickSeries.createPriceLine(priceLine);
 }
 
 async function iterateThroughInitialData() {
@@ -66,6 +87,8 @@ async function updateCandle() {
         candle.close = tick.Bid;
     }
 
+    currentAsk = tick.Ask;
+    currentBid = tick.Bid;
     candle.high = candle.high > tick.Bid ? candle.high : tick.Bid;
     candle.low = candle.low < tick.Bid ? candle.low : tick.Bid;
     candle.close = tick.Bid;
