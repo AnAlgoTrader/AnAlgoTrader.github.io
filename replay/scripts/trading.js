@@ -10,6 +10,9 @@ var candle = {
     close: 0
 };
 
+document.getElementById("buyBtn").onclick = async () => await buy();
+document.getElementById("sellBtn").onclick = async () => await sell();
+
 async function loadData() {
     return fetch("https://raw.githubusercontent.com/AnAlgoTrader/Data/main/USATECH.IDXUSD_Ticks_06.03.2023-06.03.2023.csv")
         .then((response) => response.text())
@@ -17,6 +20,14 @@ async function loadData() {
             return Papa.parse(data, { header: true });
         });
 };
+
+async function buy() {
+    console.log("async BUY!!");
+}
+
+async function sell() {
+    console.log("async SELL!!");
+}
 
 async function iterateThroughInitialData() {
     const tick = ticks.data[ticksIndex];
