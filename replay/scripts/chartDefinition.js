@@ -26,31 +26,3 @@ var chart = LightweightCharts.createChart(document.getElementById('chartContaine
             minBarSpacing: 0.0,
         }
     });
-
-const lineSeries1 = chart.addLineSeries({
-    color: "rgba(255, 211, 75, 1)",
-    lineWidth: 1,
-});
-
-const lineSeries2 = chart.addLineSeries({
-    color: "rgba(138, 171, 238, 1)",
-    lineWidth: 1,
-});
-
-function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
-function updateSeries() {
-    var currentTime = Math.round(new Date().getTime() / 1000);
-    lineSeries1.update({
-        time: currentTime,
-        value: getRandomArbitrary(1, 10)
-    });
-    lineSeries2.update({
-        time: currentTime,
-        value: getRandomArbitrary(1, 10)
-    });
-}
-
-setInterval(updateSeries, 1000);
