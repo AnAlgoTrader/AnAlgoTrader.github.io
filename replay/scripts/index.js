@@ -37,16 +37,6 @@ const lineSeries2 = chart.addLineSeries({
     lineWidth: 1,
 });
 
-chart.applyOptions({
-    timeScale: {
-        borderVisible: false,
-        borderColor: '#fff000',
-        visible: true,
-        timeVisible: true,
-        minBarSpacing: 0.0,
-    }
-});
-
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
