@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
   <link type="text/css" rel="stylesheet" href="./styles/index.css" />
+  <link type="text/css" rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript"
     src="./node_modules/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
@@ -12,8 +13,18 @@
   <script type="text/javascript" src="./node_modules/moment/moment.js"></script>
 </head>
 
-<body style="padding: 0; margin: 0">
-  <div id="chartContainer" style="position:absolute; width:100%; height:100%"></div>
+<body>
+  <div class="dashboard">
+    <table style="width: 100%;">
+      <tr>
+        <td>Funds:<span id="funds">00000000</span></td>
+        <td>Pnl:<span id="pnl">00000000</span></td>
+        <td><button type="button" class="btn btn-success">Buy</button></td>
+        <td><button type="button" class="btn btn-danger">Sell</button></td>
+      </tr>
+    </table>
+  </div>
+  <div id="chartContainer" class="chart"></div>
   <script type="text/javascript" src="./scripts/constants.js"></script>
   <script type="text/javascript" src="./scripts/chartDefinition.js"></script>
   <script type="text/javascript" src="./scripts/trading.js"></script>

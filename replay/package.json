@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "lightweight-charts": "^4.0.1",
     "moment": "^2.29.4",
     "papaparse": "^5.4.1"
