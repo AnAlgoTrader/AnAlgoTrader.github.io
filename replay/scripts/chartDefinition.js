@@ -26,3 +26,12 @@ var chart = LightweightCharts.createChart(document.getElementById('chartContaine
             minBarSpacing: 0.0,
         }
     });
+
+const candleStickSeries = chart.addCandlestickSeries({
+    upColor: green,
+    downColor: red,
+    wickUpColor: green,
+    wickDownColor: red,
+    borderVisible: false,
+    priceLineVisible: false,
+});
