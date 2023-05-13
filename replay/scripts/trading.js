@@ -18,8 +18,20 @@ async function loadData() {
         });
 };
 
+async function iterateThroughInitialData() {
+    const tick = ticks.data[ticksIndex];
+    const tickDate = await extractDukascopyDate(tick);
+    const hour = tickDate._d.getHours();
+    if (hour < 9) {
+        updateCandle();
+        await iterateThroughInitialData();
+    }
+}
+
 async function init() {
     ticks = await loadData();
+    await iterateThroughInitialData();
+    setInterval(updateCandle, 500);
 };
 
 async function extractDukascopyDate(tick) {
@@ -51,4 +63,3 @@ async function updateCandle() {
 }
 
 init();
-setInterval(updateCandle, 500);
