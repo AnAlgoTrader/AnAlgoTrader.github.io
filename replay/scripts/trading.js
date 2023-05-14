@@ -19,6 +19,7 @@ var candle = {
 
 document.getElementById("buyBtn").onclick = async () => await buy();
 document.getElementById("sellBtn").onclick = async () => await sell();
+document.getElementById("closeBtn").onclick = async () => await close();
 
 async function loadData() {
     return fetch("https://raw.githubusercontent.com/AnAlgoTrader/Data/main/USATECH.IDXUSD_Ticks_06.03.2023-06.03.2023.csv")
@@ -27,6 +28,15 @@ async function loadData() {
             return Papa.parse(data, { header: true });
         });
 };
+
+async function close(){
+    var funds = parseFloat($('#funds').text());
+    funds = funds + trade.pnl;
+    trade = null;
+    $('#funds').text(funds);
+    $('#pnlBtn').css("background-color", "gray");
+    $('#pnlBtn').html("PnL");
+}
 
 async function buy() {
     trade = {
@@ -58,8 +68,6 @@ async function init() {
     $('#funds').text(10000);
     ticks = await loadData();
     await iterateThroughInitialData();
-    var priceScale = candleStickSeries.priceScale();
-    console.log(priceScale);
     setInterval(updateAll, 500);
 };
 
@@ -82,7 +90,6 @@ async function updateTradePnl() {
         $('#pnlBtn').html(buttonText);
         var classContent = trade.pnl < 0 ? red : green;
         $('#pnlBtn').css("background-color", classContent);
-        console.log(`${new Date()} ${classContent}`);
     }
 }
 
