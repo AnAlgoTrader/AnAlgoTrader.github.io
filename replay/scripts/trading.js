@@ -8,6 +8,8 @@ var commission = 2.0;
 var multiplier = 2.0;
 var quantity = 5;
 var trade = null;
+const hoursToStartFrom = [7, 8, 9, 10, 11, 12, 13, 14];
+const randomHourToStart = hoursToStartFrom[Math.floor(Math.random() * hoursToStartFrom.length)];
 
 var candle = {
     time: 0,
@@ -21,15 +23,22 @@ document.getElementById("buyBtn").onclick = async () => await buy();
 document.getElementById("sellBtn").onclick = async () => await sell();
 document.getElementById("closeBtn").onclick = async () => await close();
 
+async function getDataFiles() {
+    return fetch("https://raw.githubusercontent.com/AnAlgoTrader/Data/main/files.json")
+        .then((response) => { return response.json(); });
+}
+
 async function loadData() {
-    return fetch("https://raw.githubusercontent.com/AnAlgoTrader/Data/main/USATECH.IDXUSD_Ticks_06.03.2023-06.03.2023.csv")
+    const files = await getDataFiles();
+    const randomFile = files[Math.floor(Math.random() * files.length)];
+    return fetch(`https://raw.githubusercontent.com/AnAlgoTrader/Data/main/${randomFile}`)
         .then((response) => response.text())
         .then((data) => {
             return Papa.parse(data, { header: true });
         });
 };
 
-async function close(){
+async function close() {
     var funds = parseFloat($('#funds').text());
     funds = funds + trade.pnl;
     trade = null;
@@ -57,8 +66,8 @@ async function sell() {
 async function iterateThroughInitialData() {
     const tick = ticks.data[ticksIndex];
     const tickDate = await extractDukascopyDate(tick);
-    const hour = tickDate._d.getHours();
-    if (hour < 9) {
+    const hour = tickDate._d.getHours();        
+    if (hour < randomHourToStart) {
         updateCandle();
         await iterateThroughInitialData();
     }
@@ -68,7 +77,7 @@ async function init() {
     $('#funds').text(10000);
     ticks = await loadData();
     await iterateThroughInitialData();
-    setInterval(updateAll, 250);
+    //setInterval(updateAll, 250);
 };
 
 async function extractDukascopyDate(tick) {
