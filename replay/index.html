@@ -15,9 +15,14 @@
 
 <body>
   <div class="dashboard">
-    Funds: <span class="funds" id="funds">----------</span>
+    <div class="funds">
+      Funds: <span id="funds">----------</span>
+    </div>
     <button id="sellBtn" type="button" class="btn btn-danger actionButton">Sell</button>
     <button id="buyBtn" type="button" class="btn btn-success actionButton">Buy</button>
+    <br/><br/>
+    <button id="closeBtn" type="button" class="btn btn-secondary actionButton">Close</button>
+    <button id="pnlBtn" type="button" class="btn btn-success actionButton">Pnl</button>
   </div>
   <div id="chartContainer" class="chart"></div>
   <script type="text/javascript" src="./scripts/constants.js"></script>

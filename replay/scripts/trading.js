@@ -4,6 +4,9 @@ var candleMinute = -1;
 var priceLines = [];
 var currentAsk = 0.0;
 var currentBid = 0.0;
+var commission = 2.0;
+var multiplier = 2.0;
+var quantity = 5;
 
 var candle = {
     time: 0,
@@ -25,29 +28,9 @@ async function loadData() {
 };
 
 async function buy() {
-    const priceLine = {
-        price: currentBid,
-        color: green,
-        lineWidth: 1,
-        lineStyle: 1,
-        axisLabelVisible: true,
-        title: `BUY@${parseFloat(currentBid).toFixed(2)} Pnl:0`,
-    };
-    priceLines.push(priceLine);
-    candleStickSeries.createPriceLine(priceLine);
 }
 
 async function sell() {
-    const priceLine = {
-        price: currentBid,
-        color: red,
-        lineWidth: 1,
-        lineStyle: 1,
-        axisLabelVisible: true,
-        title: `SELL@${parseFloat(currentBid).toFixed(2)} Pnl:0`,
-    };
-    priceLines.push(priceLine);
-    candleStickSeries.createPriceLine(priceLine);
 }
 
 async function iterateThroughInitialData() {
@@ -63,7 +46,9 @@ async function iterateThroughInitialData() {
 async function init() {
     ticks = await loadData();
     await iterateThroughInitialData();
-    setInterval(updateAll, 500);
+    var priceScale = candleStickSeries.priceScale();
+    console.log(priceScale);
+    //setInterval(updateAll, 500);
 };
 
 async function extractDukascopyDate(tick) {
@@ -71,19 +56,8 @@ async function extractDukascopyDate(tick) {
     return moment(dukascopyDate, 'DD.MM.YYYY hh:mm:ss.fff');
 }
 
-async function updatePriceLines() {
-    priceLines.forEach(priceLine => {
-        var price = priceLine.price;
-        var title = priceLine.title;
-        var side = title.split('@')[0];
-        consol
-        //TODO
-    });
-}
-
 async function updateAll() {
     await updateCandle();
-    await updatePriceLines();
 }
 
 async function updateCandle() {
