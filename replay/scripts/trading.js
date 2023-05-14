@@ -7,6 +7,7 @@ var currentBid = 0.0;
 var commission = 2.0;
 var multiplier = 2.0;
 var quantity = 5;
+var trade = null;
 
 var candle = {
     time: 0,
@@ -28,9 +29,19 @@ async function loadData() {
 };
 
 async function buy() {
+    trade = {
+        entryPrice: currentBid,
+        side: 'BUY',
+        pnl: 0
+    };
 }
 
 async function sell() {
+    trade = {
+        entryPrice: currentBid,
+        side: 'SELL',
+        pnl: 0
+    };
 }
 
 async function iterateThroughInitialData() {
@@ -44,11 +55,12 @@ async function iterateThroughInitialData() {
 }
 
 async function init() {
+    $('#funds').text(10000);
     ticks = await loadData();
     await iterateThroughInitialData();
     var priceScale = candleStickSeries.priceScale();
     console.log(priceScale);
-    //setInterval(updateAll, 500);
+    setInterval(updateAll, 500);
 };
 
 async function extractDukascopyDate(tick) {
@@ -56,8 +68,27 @@ async function extractDukascopyDate(tick) {
     return moment(dukascopyDate, 'DD.MM.YYYY hh:mm:ss.fff');
 }
 
+async function updateTradePnl() {
+    if (trade) {
+        var priceDifference = currentBid - trade.entryPrice;
+        var pnl = priceDifference * multiplier * quantity;
+        if (trade.side == 'BUY') {
+            trade.pnl = pnl - (commission * 3);
+        }
+        else {
+            trade.pnl = (pnl * -1) - (commission * 3);
+        }
+        var buttonText = `${trade.side}@${parseFloat(trade.entryPrice).toFixed(2)}<br/>${parseFloat(trade.pnl).toFixed(2)}`;
+        $('#pnlBtn').html(buttonText);
+        var classContent = trade.pnl < 0 ? red : green;
+        $('#pnlBtn').css("background-color", classContent);
+        console.log(`${new Date()} ${classContent}`);
+    }
+}
+
 async function updateAll() {
     await updateCandle();
+    await updateTradePnl();
 }
 
 async function updateCandle() {
