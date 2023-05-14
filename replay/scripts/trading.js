@@ -77,7 +77,7 @@ async function init() {
     $('#funds').text(10000);
     ticks = await loadData();
     await iterateThroughInitialData();
-    //setInterval(updateAll, 250);
+    setInterval(updateAll, 250);
 };
 
 async function extractDukascopyDate(tick) {
