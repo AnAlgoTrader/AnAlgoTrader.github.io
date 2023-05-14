@@ -75,6 +75,9 @@ async function updatePriceLines() {
     priceLines.forEach(priceLine => {
         var price = priceLine.price;
         var title = priceLine.title;
+        var side = title.split('@')[0];
+        consol
+        //TODO
     });
 }
 
