@@ -1,0 +1,410 @@
+[
+    {
+        "question": "A developer is creating a Ruby application and needs to automate the deployment, scaling, and management of an environment without requiring knowledge of the underlying infrastructure. Which service would best accomplish this task?",
+        "answer": "AWS Elastic Beanstalk"
+    },
+    {
+        "question": "A company is offering APIs as a service over the internet to provide unauthenticated read access to statistical information that is updated daily. The company uses Amazon API Gateway and AWS Lambda to develop the APIs. The service has become popular, and the company wants to enhance the responsiveness of the APIs. Which action can help the company achieve this goal?",
+        "answer": "Enable API caching in API Gateway"
+    },
+    {
+        "question": "A company has an AWS Lambda function that processes incoming requests from an Amazon API Gateway API. The API calls the Lambda function by using a Lambda alias. A developer updated the Lambda function code to handle more details related to the incoming requests. The developer wants to deploy the new Lambda function for more testing by other developers with no impact to customers that use the API. Which solution will meet these requirements with the LEAST operational overhead?",
+        "answer": "Create a new version of the Lambda function. Create and deploy a second Lambda function to filter incoming requests from API Gateway. If the filtering Lambda function detects a test request, the filtering Lambda function will invoke the new Lambda version of the code. For other requests, the filtering Lambda function will invoke the old Lambda version. Update the API Gateway API to use the filtering Lambda function."
+    },
+    {
+        "question": "A developer wants to use AWS Elastic Beanstalk to test a new version of an application in a test environment. Which deployment method offers the FASTEST deployment?",
+        "answer": "All at once"
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    }
+]
