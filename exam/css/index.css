@@ -1,0 +1,20 @@
+html, body{
+    font-size: 18px;
+}
+
+#question{
+    padding: 40px;
+}
+
+#answer{
+    padding: 40px;
+}
+
+#search{
+    width: 100%;
+}
+#search input{
+    width: 90%;
+    height: 30px;
+    font-size: 16px;
+}
