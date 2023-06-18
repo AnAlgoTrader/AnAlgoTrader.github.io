@@ -96,8 +96,8 @@
         "answer": "Create a database user. Store the user name and password in an AWS Secrets Manager secret that has daily rotation enabled."
     },
     {
-        "question": "",
-        "answer": ""
+        "question": "A developer has written code for an application and wants to share it with other developers on the team to receive feedback. The shared application code needs to be stored long-term with multiple versions and batch change tracking. Which AWS service should the developer use?",
+        "answer": "AWS CodeCommit"
     },
     {
         "question": "",
