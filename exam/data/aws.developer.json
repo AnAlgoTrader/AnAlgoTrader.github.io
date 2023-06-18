@@ -100,8 +100,8 @@
         "answer": "AWS CodeCommit"
     },
     {
-        "question": "",
-        "answer": ""
+        "question": "A company has an application that uses Amazon Cognito user pools as an identity provider. The company must secure access to user records. The company has set up mufti-factor authentication (MFA). The company also wants to send a login activity notification by email every time a user logs in. What is the MOST operationally efficient solution that meets this requirement?",
+        "answer": "Create an AWS Lambda function that uses Amazon Simple Email Service (Amazon SES) to send the email notification. Add an Amazon Cognito post authentication Lambda trigger for the function."
     },
     {
         "question": "",
