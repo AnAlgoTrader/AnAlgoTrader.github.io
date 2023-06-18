@@ -92,8 +92,8 @@
         "answer": "A Perform a BatchGetltem operation that returns items from the two tables. Use the list of songName/artistName keys for the songs table and the list of artistName key for the artists table. "
     },
     {
-        "question": "",
-        "answer": ""
+        "question": "A developer is writing an application for a company. The application will be deployed on Amazon EC2 and will use an Amazon RDS for Microsoft SQL Server database. The company's security team requires that database credentials are rotated at least weekly. How should the developer configure the database credentials for this application?",
+        "answer": "Create a database user. Store the user name and password in an AWS Secrets Manager secret that has daily rotation enabled."
     },
     {
         "question": "",
