@@ -88,8 +88,8 @@
         "answer": "Check the security groups that are assigned to the EC2 instances. Make sure that a rule is not blocking the access to Amazon S3.<br/>Check the S3 Lifecycle policy to validate the permissions that are assigned to the S3 bucket."
     },
     {
-        "question": "",
-        "answer": ""
+        "question": "A developer is working on a web application that uses Amazon DynamoDB as its data store. The application has two DynamoDB tables: one table that is named artists and one table that is named songs. The artists table has artistName as the partition key. The songs table has songName as the partition key and artistName as the sort key. The table usage patterns include the retrieval of multiple songs and artists in a single database operation from the webpage. The developer needs a way to retrieve this information with minimal network traffic and optimal application performance. Which solution will meet these requirements? ",
+        "answer": "A Perform a BatchGetltem operation that returns items from the two tables. Use the list of songName/artistName keys for the songs table and the list of artistName key for the artists table. "
     },
     {
         "question": "",
