@@ -1,0 +1,26 @@
+<div class="card">
+    <p class="cardHeader">Purge</h4>
+    <p class="cardContent">mvn dependency:purge-local-repository</p>
+    <p class="cardContent">mvn dependency:purge-local-repository -DactTransitively=false</p>
+</div>
+<br/>
+<div class="card">
+    <p class="cardHeader">Install - dot not run tests</h4>
+    <p class="cardContent">mvn clean install -DskipTests</p>
+</div>
+<br/>
+<div class="card">
+    <p class="cardHeader">Resolve dependencies</h4>
+    <p class="cardContent">mvn dependency:resolve-plugins</p>
+</div>
+<br/>
+<div class="card">
+    <p class="cardHeader">Run Cucumber tests with tag debug</h4>
+    <p class="cardContent">mvn clean verify -Dtags=@debug</p>
+</div>
+<br/>
+<div class="card">
+    <p class="cardHeader">Run java class</h4>
+    <p class="cardContent">mvn compile exec:java -D exec.mainClass="org.runner.Main"</p>
+</div>
+<br/>
