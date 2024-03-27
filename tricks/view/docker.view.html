@@ -15,7 +15,7 @@
 <br/>
 <div class="card">
     <p class="cardHeader">Run docker container in daemon mode</h4>
-    <p class="cardContent">docker container run -d --name containerName ngnix:alpine</p>
+    <p class="cardContent">docker container run -d --name containerName -P ngnix:alpine</p>
 </div>
 <br/>
 <div class="card">
@@ -26,4 +26,14 @@
 <div class="card">
     <p class="cardHeader">Remove existing container</h4>
     <p class="cardContent">docker rm containerName</p>
+</div>
+<br/>
+<div class="card">
+    <p class="cardHeader">List existing running container. It will show linking ports</h4>
+    <p class="cardContent">docker container ls</p>
+</div>
+<br/>
+<div class="card">
+    <p class="cardHeader">Link web container to localhost. Replace localhost with the ip of the host that you want to link</h4>
+    <p class="cardContent">elinks --dump http://localhost:port</p>
 </div>
